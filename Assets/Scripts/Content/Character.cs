@@ -1,5 +1,5 @@
 using System;
-using AIModule;
+using Atomic.AI;
 using Atomic.Behaviours;
 using Atomic.Elements;
 using Atomic.Extensions;
@@ -35,13 +35,11 @@ namespace Sample
         ///Core:
         public Character_Core core;
         public Character_View view;
-        public Character_AI ai;
 
         public override void Compose()
         {
             this.core.Compose();
             this.view.Compose(this.core);
-            this.ai.Compose(this);
             base.Compose();
         }
 
@@ -64,7 +62,6 @@ namespace Sample
         {
             float deltaTime = Time.fixedDeltaTime;
             this.core.OnFixedUpdate(deltaTime);
-            this.ai.OnFixedUpdate(deltaTime);
         }
 
         private void LateUpdate()
@@ -171,36 +168,6 @@ namespace Sample
         public void OnLateUpdate(float deltaTime)
         {
             this.moveAnimMechanics.OnUpdate(deltaTime);
-        }
-    }
-
-    [Serializable]
-    public sealed class Character_AI : IFixedUpdate, IEnable, IDisable
-    {
-        [SerializeField]
-        private Blackboard blackboard;
-
-        [SerializeField]
-        private AIBehaviour behaviour;
-
-        public void Compose(AtomicObject obj)
-        {
-            this.blackboard.SetObject(BlackboardAPI.Character, obj);
-        }
-
-        public void Enable()
-        {
-            this.behaviour.OnStart();
-        }
-
-        public void Disable()
-        {
-            behaviour.OnStop();
-        }
-
-        public void OnFixedUpdate(float deltaTime)
-        {
-            this.behaviour.OnUpdate(deltaTime);
         }
     }
 }

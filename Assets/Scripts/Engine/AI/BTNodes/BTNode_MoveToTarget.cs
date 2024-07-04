@@ -1,5 +1,5 @@
 using System;
-using AIModule;
+using Atomic.AI;
 using UnityEngine;
 
 namespace Game.Engine
