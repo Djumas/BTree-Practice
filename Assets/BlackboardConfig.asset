@@ -17,6 +17,7 @@ MonoBehaviour:
   className: BlackboardAPI
   imports:
   - Sample
+  - UnityEngine
   keys:
   - id: 0
     name: UNDEFINED
@@ -24,3 +25,18 @@ MonoBehaviour:
   - id: 1
     name: Character
     type: 'Character : class'
+  - id: 2
+    name: Barn
+    type: 'Barn : class'
+  - id: 3
+    name: DialogBarnFull
+    type: 'GameObject: class'
+  - id: 4
+    name: DialogNoTrees
+    type: 'GameObject: class'
+  - id: 5
+    name: minDistance
+    type: float
+  - id: 6
+    name: resource
+    type: 'Sample.Tree: class'
