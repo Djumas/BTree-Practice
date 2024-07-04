@@ -17,6 +17,8 @@ MonoBehaviour:
   className: BlackboardAPI
   imports:
   - Sample
+  - Game.Engine
+  - Atomic.Objects
   keys:
   - id: 0
     name: UNDEFINED
@@ -24,3 +26,9 @@ MonoBehaviour:
   - id: 1
     name: Character
     type: 'Character : class'
+  - id: 2
+    name: ResourceService
+    type: 'ResourceService : class'
+  - id: 3
+    name: TargetResource
+    type: 'IAtomicObject : class'
